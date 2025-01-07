@@ -1,0 +1,165 @@
+.wrapper {
+  position: relative;
+  background-color: rgb(116, 220, 46);
+  height: 600px;
+  width: 360px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.comm-icon {
+  position: absolute;
+  top: 1%;
+  left: 20%;
+  background-color:transparent;
+  width: 0; 
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  
+  border-bottom: 10px solid rgb(78, 145, 33);
+}
+
+/* 
+todo make border around
+.comm-icon::after{
+    border: 1px solid rgb(78, 145, 33)
+} */
+
+.comm {
+  position: absolute;
+  top: 0.6%;
+  left: 25%;
+  color: rgb(78, 145, 33);
+  font-size: 12px;
+  font-family: comic sans ms;
+}
+
+.screen {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  height: 45%;
+  width: 315px;
+  border-radius: 6px;
+}
+
+.lcd {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: gray;
+  height: 70%;
+  width: 68%;
+  border-radius: 4px;
+}
+
+.power-icon {
+  display: inline-flex;
+}
+
+.power-icon span:nth-child(1) {
+  height: 6px;
+  width: 6px;
+  background-color: brown;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 2%;
+  z-index: 1;
+}
+.power-icon span:nth-child(2) {
+  height: 6px;
+  width: 6px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 4%;
+}
+.power-icon span:nth-child(3) {
+  height: 6px;
+  width: 6px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 3.3%;
+}
+.power-icon span:nth-child(4) {
+  height: 6px;
+  width: 6px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 6.8%;
+}
+.power-icon span:nth-child(5) {
+  height: 6px;
+  width: 6px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 6%;
+}
+.power-icon span:nth-child(6) {
+  height: 6px;
+  width: 6px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 9%;
+}
+.power-icon span:nth-child(7) {
+  height: 6px;
+  width: 6px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 27%;
+  left: 8.6%;
+}
+
+.power {
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  color: cadetblue;
+  font-family: comic sans ms;
+  font-size: 10px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: cadetblue;
+  font-family: comic sans ms;
+  font-weight: bold;
+  font-size: 20px;
+  text-wrap: nowrap;
+}
+
+.logo span:nth-child(1) {
+  color: red;
+}
+.logo span:nth-child(2) {
+  color: rgb(141, 60, 199);
+}
+.logo span:nth-child(3) {
+  color: rgb(116, 220, 46);
+}
+.logo span:nth-child(4) {
+  color: yellow;
+}
+.logo span:nth-child(5) {
+  color: rgb(9, 158, 158);
+}
