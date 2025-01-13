@@ -12,12 +12,12 @@
   position: absolute;
   top: 1%;
   left: 20%;
-  background-color:transparent;
-  width: 0; 
+  background-color: transparent;
+  width: 0;
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  
+
   border-bottom: 10px solid rgb(78, 145, 33);
 }
 
@@ -45,6 +45,7 @@ todo make border around
   height: 45%;
   width: 315px;
   border-radius: 6px;
+  z-index: 1;
 }
 
 .lcd {
@@ -162,4 +163,99 @@ todo make border around
 }
 .logo span:nth-child(5) {
   color: rgb(9, 158, 158);
+}
+
+.inner-ridge {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 42%;
+  width: 68%;
+  border: 1px solid transparent;
+  border-top: none;
+  border-radius: 4px 4px 24px 24px;
+  box-shadow: 0px 1px 50px 0.5px rgb(114, 195, 92);
+}
+
+.nintendo-logo {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(95, 178, 40);
+  font-family: comic sans ms;
+  border: 2px solid rgb(95, 178, 40);
+  border-radius: 24px;
+  padding-inline: 8px;
+  padding-block: 0px;
+  font-weight: 700;
+}
+
+.trademark {
+  position: absolute;
+  left: 88%;
+  top: 10%;
+  font-size: 6px;
+}
+
+.button {
+  display: flex;
+  font-family: comic sans ms;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 1px solid tranparent;
+  /* border-style: outset; */
+  border-radius: 50%;
+  background-color: rgb(48, 45, 45);
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
+    0.5px 0.5px 2px 0px #ffffff inset;
+  color: rgb(13, 12, 12);
+}
+
+.button-a {
+  top: 60%;
+  right: 12%;
+}
+
+.button-b {
+  top: 63%;
+  right: 25%;
+}
+
+.select-start-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-evenly;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgb(78, 145, 33);
+}
+
+.select,
+.start {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.start span,
+.select span {
+  margin: auto;
+  background-color: rgb(48, 45, 45);
+  border: 1px solid transparent;
+  border-radius: 40%;
+  /* border-radius: 1.4rem; */
+  width: 18px;
+  height: 4px;
+  box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
+    0.2px 0.2px 1px 0px #ffffff inset;
 }
