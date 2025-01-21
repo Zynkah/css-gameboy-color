@@ -9,6 +9,19 @@
   <body>
     <h1>Gameboy Color</h1>
     <div class="wrapper">
+      <div class="left-ridges">
+        <span class="ridge-common"></span>
+        <span class="ridge-common"></span>
+        <span class="ridge-common"></span>
+        <span class="ridge-common"></span>
+      </div>
+      <div class="right-ridges">
+        <span class="ridge-common"></span>
+        <span class="ridge-common"></span>
+        <span class="ridge-common"></span>
+        <span class="ridge-common"></span>
+      </div>
+
       <div class="comm-icon"></div>
       <div class="comm">COMM.</div>
       <div class="screen">
@@ -37,12 +50,33 @@
         Nintendo<span class="trademark">&reg;</span>
       </div>
       <!-- maybe grid the buttons -->
+      <div class="d-pad">
+        <span class="d-pad-common"
+          ><span class="left-arrow arrow-common"></span
+          ><span class="right-arrow arrow-common"></span
+        ></span>
+        <span class="circle"></span>
+        <span class="d-pad-common"
+          ><span class="up-arrow arrow-common"></span
+          ><span class="down-arrow arrow-common"></span
+        ></span>
+      </div>
       <div class="button button-a">A</div>
       <div class="button button-b">B</div>
+      
       <div class="select-start-wrapper">
-        <div class="select"><span></span>select</div>
-        <div class="start"><span></span>start</div>
+        <div class="select">
+          <span class="button-border">
+          <div class="select-button"></div></span>
+          <span>select</span>
+        </div>
+        <div class="start">
+          <span class="button-border"><div class="start-button"></div></span>
+          
+          <span>start</span>
+        </div>
       </div>
+      <div class="speaker"></div>
     </div>
   </body>
 </html>

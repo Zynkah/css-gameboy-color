@@ -3,11 +3,71 @@
   background-color: rgb(116, 220, 46);
   height: 600px;
   width: 360px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  border-radius: 6px 6px 24px 24px;
+  /* todo look up clip-path // bezier curve between points */
+  /* clip-path: polygon(
+    100% 85%, 
+    83% 92%, 
+    60% 94%, 
+    42% 94%, 
+    24% 92%, 
+    11% 91%, 
+    0% 88%, 
+    0% 0%, 
+    100% 0%
+    ); */
 }
+
+.left-ridges {
+  display: inline-flex;
+}
+
+.ridge-common {
+  position: absolute;
+  width: 8px;
+  aspect-ratio: 1 / 1;
+  background-color: rgb(116, 220, 46);
+  border-radius: 50%;
+}
+
+.left-ridges span:nth-child(1) {
+  left: -1%;
+  top: 7%;
+}
+.left-ridges span:nth-child(2) {
+  left: -1%;
+  top: 10%;
+}
+.left-ridges span:nth-child(3) {
+  left: -1%;
+  top: 13%;
+}
+.left-ridges span:nth-child(4) {
+  left: -1%;
+  top: 16%;
+}
+
+.right-ridges {
+  display: inline-flex;
+}
+
+.right-ridges span:nth-child(1) {
+  right: -1%;
+  top: 7%;
+}
+.right-ridges span:nth-child(2) {
+  right: -1%;
+  top: 10%;
+}
+.right-ridges span:nth-child(3) {
+  right: -1%;
+  top: 13%;
+}
+.right-ridges span:nth-child(4) {
+  right: -1%;
+  top: 16%;
+}
+
 .comm-icon {
   position: absolute;
   top: 1%;
@@ -170,12 +230,12 @@ todo make border around
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  height: 42%;
+  height: 90%;
   width: 68%;
   border: 1px solid transparent;
   border-top: none;
   border-radius: 4px 4px 24px 24px;
-  box-shadow: 0px 1px 50px 0.5px rgb(114, 195, 92);
+  box-shadow: 0px 1px 50px 0.5px rgb(70, 81, 67, 0.2);
 }
 
 .nintendo-logo {
@@ -190,6 +250,7 @@ todo make border around
   padding-inline: 8px;
   padding-block: 0px;
   font-weight: 700;
+  letter-spacing: 2.5px;
 }
 
 .trademark {
@@ -197,6 +258,69 @@ todo make border around
   left: 88%;
   top: 10%;
   font-size: 6px;
+}
+
+.d-pad {
+  display: inline-flex;
+}
+
+.d-pad-common {
+  position: absolute;
+  width: 80px;
+  height: 25px;
+  background-color: rgb(48, 45, 45);
+  top: 62%;
+  left: 8%;
+}
+
+.arrow-common {
+  position: absolute;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #000;
+}
+
+.d-pad span:nth-child(1) {
+}
+
+.up-arrow {
+  top: 23%;
+  left: 8%;
+  transform: rotate(30deg);
+}
+
+.down-arrow {
+  bottom: 27%;
+  right: 6%;
+  transform: rotate(90deg);
+}
+
+.right-arrow {
+  top: 25%;
+  right: 6%;
+  transform: rotate(90deg);
+}
+
+.left-arrow {
+  top: 20%;
+  left: 8%;
+  transform: rotate(30deg);
+}
+
+.circle {
+  position: absolute;
+  top: 62.3%;
+  left: 16%;
+  width: 22px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
+    0.5px 0.5px 1px 0px #a09393 inset;
+}
+
+.d-pad span:nth-child(3) {
+  transform: rotate(90deg);
 }
 
 .button {
@@ -209,7 +333,7 @@ todo make border around
   /* border-style: outset; */
   border-radius: 50%;
   background-color: rgb(48, 45, 45);
-  width: 30px;
+  width: 40px;
   aspect-ratio: 1 / 1;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
     0.5px 0.5px 2px 0px #ffffff inset;
@@ -223,7 +347,7 @@ todo make border around
 
 .button-b {
   top: 63%;
-  right: 25%;
+  right: 28%;
 }
 
 .select-start-wrapper {
@@ -231,11 +355,11 @@ todo make border around
   flex-direction: row;
   gap: 10px;
   position: absolute;
-  bottom: 13%;
+  bottom: 11%;
   left: 50%;
   transform: translateX(-50%);
   justify-content: space-evenly;
-  font-size: 10px;
+  font-size: 14px;
   text-transform: uppercase;
   color: rgb(78, 145, 33);
 }
@@ -247,15 +371,31 @@ todo make border around
   gap: 5px;
 }
 
-.start span,
-.select span {
+.start-button,
+.select-button {
   margin: auto;
   background-color: rgb(48, 45, 45);
-  border: 1px solid transparent;
+  border: 1px solid black;
   border-radius: 40%;
-  /* border-radius: 1.4rem; */
-  width: 18px;
+  /* width: 22px; */
   height: 4px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
     0.2px 0.2px 1px 0px #ffffff inset;
+}
+
+.button-border {
+  border: 5px solid rgb(78, 145, 33, 0.4);
+  border-radius: 40%;
+  width: 26px;
+  margin: auto;
+}
+
+.speaker {
+  position: absolute;
+  bottom: 2.5%;
+  right: 4%;
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  background-color: rgb(78, 145, 33, 0.2);
+  border-radius: 15%;
 }
