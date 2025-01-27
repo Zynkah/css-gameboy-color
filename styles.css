@@ -78,7 +78,8 @@
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
 
-  border-bottom: 10px solid rgb(78, 145, 33);
+  border-bottom: 10px solid rgb(158, 249, 97);
+  /* @todo find out how to do a proper box shadow like effect around triangle */
 }
 
 /* 
@@ -91,7 +92,9 @@ todo make border around
   position: absolute;
   top: 0.6%;
   left: 25%;
-  color: rgb(78, 145, 33);
+  color: rgb(158, 249, 97);
+  text-shadow: 1px 1px 1px rgb(78, 145, 33);
+
   font-size: 12px;
   font-family: comic sans ms;
 }
@@ -264,6 +267,13 @@ todo make border around
   display: inline-flex;
 }
 
+/* todo fix shadow overlay thingy */
+/* .d-pad-shadow {
+  box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
+    0.5px 0.5px 2px 0px #ffffff inset;
+  z-index: 0;
+} */
+
 .d-pad-common {
   position: absolute;
   width: 80px;
@@ -271,6 +281,7 @@ todo make border around
   background-color: rgb(48, 45, 45);
   top: 62%;
   left: 8%;
+  z-index: 1;
 }
 
 .arrow-common {
@@ -314,7 +325,7 @@ todo make border around
   width: 22px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
     0.5px 0.5px 1px 0px #a09393 inset;
 }
@@ -361,7 +372,9 @@ todo make border around
   justify-content: space-evenly;
   font-size: 14px;
   text-transform: uppercase;
-  color: rgb(78, 145, 33);
+  color: rgb(158, 249, 97);
+  text-shadow: 1px 1px 1px rgb(78, 145, 33);
+  font-family: comic sans ms;
 }
 
 .select,
@@ -392,10 +405,35 @@ todo make border around
 
 .speaker {
   position: absolute;
-  bottom: 2.5%;
+  bottom: 2%;
   right: 4%;
-  width: 80px;
+  width: 85px;
   aspect-ratio: 1 / 1;
-  background-color: rgb(78, 145, 33, 0.2);
-  border-radius: 15%;
+}
+
+.dot-wrapper{
+  display: flex;
+  gap: 5px;
+  padding-block: 2px;
+  align-items: center;
+  justify-content: center;
+  /* mess with values for skew */
+  transform-origin: 100% 50%;
+  transform: skewY(-2deg);
+}
+
+.dot {
+  width: 6px;
+  aspect-ratio: 1/1;
+}
+
+.dot-open {
+background-color: rgb(31, 29, 29);
+border-radius: 50%;
+}
+
+.dot-closed{
+  background-color: rgb(133, 217, 78);
+  box-shadow: 0.5px 0.5px 2px 0px rgb(57, 85, 38) inset;
+  border-radius: 50%;
 }
