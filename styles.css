@@ -123,9 +123,10 @@ todo make border around
 }
 
 .power-icon {
-  display: inline-flex;
+  display: flex;
 }
 
+/* power light */
 .power-icon span:nth-child(1) {
   height: 6px;
   width: 6px;
@@ -136,6 +137,8 @@ todo make border around
   left: 2%;
   z-index: 1;
 }
+
+/* first crescent */
 .power-icon span:nth-child(2) {
   height: 6px;
   width: 6px;
@@ -154,6 +157,8 @@ todo make border around
   top: 27%;
   left: 3.3%;
 }
+
+/* second crescent */
 .power-icon span:nth-child(4) {
   height: 6px;
   width: 6px;
@@ -172,6 +177,8 @@ todo make border around
   top: 27%;
   left: 6%;
 }
+
+/*  third crescent */
 .power-icon span:nth-child(6) {
   height: 6px;
   width: 6px;
@@ -179,7 +186,7 @@ todo make border around
   border-radius: 50%;
   position: absolute;
   top: 27%;
-  left: 9%;
+  left: 9.6%;
 }
 .power-icon span:nth-child(7) {
   height: 6px;
@@ -188,7 +195,7 @@ todo make border around
   border-radius: 50%;
   position: absolute;
   top: 27%;
-  left: 8.6%;
+  left: 9%;
 }
 
 .power {
@@ -197,7 +204,7 @@ todo make border around
   left: 2%;
   color: cadetblue;
   font-family: comic sans ms;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .logo {
