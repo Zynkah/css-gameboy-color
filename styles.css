@@ -1,9 +1,10 @@
 .wrapper {
   position: relative;
   background-color: rgb(116, 220, 46);
-  height: 600px;
+  height: 560px;
   width: 360px;
   border-radius: 6px 6px 24px 24px;
+  user-select: none;
   /* todo look up clip-path // bezier curve between points */
   /* clip-path: polygon(
     100% 85%, 
@@ -250,7 +251,7 @@ todo make border around
 
 .nintendo-logo {
   position: absolute;
-  top: 52%;
+  top: 53%;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(95, 178, 40);
@@ -261,6 +262,12 @@ todo make border around
   padding-block: 0px;
   font-weight: 700;
   letter-spacing: 2.5px;
+  /* box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.2),
+    0px 0px 5px 1px rgba(255, 255, 255, 0.2) inset;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2),
+    0px 0px 1px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 1px rgb(95, 178, 40);
+  font-weight: 100; */
 }
 
 .trademark {
@@ -268,6 +275,8 @@ todo make border around
   left: 88%;
   top: 10%;
   font-size: 6px;
+  text-shadow: none;
+  -webkit-text-stroke: none;
 }
 
 .d-pad {
@@ -344,18 +353,34 @@ todo make border around
 .button {
   display: flex;
   font-family: comic sans ms;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   position: absolute;
   border: 1px solid tranparent;
   /* border-style: outset; */
   border-radius: 50%;
   background-color: rgb(48, 45, 45);
-  width: 40px;
-  aspect-ratio: 1 / 1;
+  width: 37px;
+  height: 37px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
     0.5px 0.5px 2px 0px #ffffff inset;
-  color: rgb(13, 12, 12);
+  cursor: pointer;
+}
+
+.button span {
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2),
+    -1px -1px 2px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 1px rgb(22, 21, 21, 0.8);
+  font-weight: 500;
+  font-size: 20px;
+  padding-left: 25%;
+  padding-bottom: 5%;
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 0px 1px 0.5px rgb(30, 32, 30), 0px 0px 2px 0px #ffffff inset;
 }
 
 .button-a {
@@ -391,20 +416,28 @@ todo make border around
   gap: 5px;
 }
 
+/* .select:active:not(:last-child) {
+    transform: translateY(0.2px);
+} */
+
 .start-button,
 .select-button {
   margin: auto;
   background-color: rgb(48, 45, 45);
-  border: 1px solid black;
+  border: 1px solid rgb(48, 45, 45);
   border-radius: 40%;
-  /* width: 22px; */
   height: 4px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
     0.2px 0.2px 1px 0px #ffffff inset;
 }
 
+.select-button:active,
+.start-button:active {
+  transform: translateY(0.2px);
+}
+
 .button-border {
-  border: 5px solid rgb(78, 145, 33, 0.4);
+  box-shadow: 0px 0px 1px 4px rgb(78, 145, 33, 0.4);
   border-radius: 40%;
   width: 26px;
   margin: auto;
@@ -418,7 +451,7 @@ todo make border around
   aspect-ratio: 1 / 1;
 }
 
-.dot-wrapper{
+.dot-wrapper {
   display: flex;
   gap: 5px;
   padding-block: 2px;
@@ -435,11 +468,11 @@ todo make border around
 }
 
 .dot-open {
-background-color: rgb(31, 29, 29);
-border-radius: 50%;
+  background-color: rgb(31, 29, 29);
+  border-radius: 50%;
 }
 
-.dot-closed{
+.dot-closed {
   background-color: rgb(133, 217, 78);
   box-shadow: 0.5px 0.5px 2px 0px rgb(57, 85, 38) inset;
   border-radius: 50%;
