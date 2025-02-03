@@ -281,33 +281,38 @@ todo make border around
 
 .d-pad {
   display: inline-flex;
+  position: absolute;
+  top: 62%;
+  left: 8%;
 }
 
 /* todo fix shadow overlay thingy */
-/* .d-pad-shadow {
-  box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
-    0.5px 0.5px 2px 0px #ffffff inset;
-  z-index: 0;
-} */
+.d-pad-shadow {
+  box-shadow: 0px 1px 1px 1px rgb(30, 32, 30);
+}
+
+.d-pad-highlight {
+  box-shadow: 0px 0px 1px 0cqmax #cccbcb inset;
+}
+
+.d-pad-vertical{
+  transform: rotate(90deg);
+}
 
 .d-pad-common {
   position: absolute;
   width: 80px;
   height: 25px;
   background-color: rgb(48, 45, 45);
-  top: 62%;
-  left: 8%;
-  z-index: 1;
+  border-radius: 5%;
 }
 
 .arrow-common {
   position: absolute;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 10px solid #000;
-}
-
-.d-pad span:nth-child(1) {
+  border-bottom: 10px solid #00000050;
+  z-index: 1;
 }
 
 .up-arrow {
@@ -336,19 +341,16 @@ todo make border around
 
 .circle {
   position: absolute;
-  top: 62.3%;
-  left: 16%;
+  top: 10%;
+  left: 36%;
   width: 22px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
-    0.5px 0.5px 1px 0px #a09393 inset;
+  box-shadow: 0px 0px 3px 0.5px rgb(30, 32, 30) inset,
+    -0.5px -0.5px 1px 0px #a09393 inset;
 }
 
-.d-pad span:nth-child(3) {
-  transform: rotate(90deg);
-}
 
 .button {
   display: flex;
@@ -363,7 +365,7 @@ todo make border around
   width: 37px;
   height: 37px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
-    0.5px 0.5px 2px 0px #ffffff inset;
+    0.5px 0.5px 2px 0px #cccbcb inset;
   cursor: pointer;
 }
 
@@ -373,14 +375,16 @@ todo make border around
     -1px -1px 2px rgba(0, 0, 0, 0.5);
   -webkit-text-stroke: 1px rgb(22, 21, 21, 0.8);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
   padding-left: 25%;
   padding-bottom: 5%;
+  transform: scale(0.75, 1);
+  -webkit-transform: scale(0.75, 1);
 }
 
 .button:active {
   transform: translateY(2px);
-  box-shadow: 0px 0px 1px 0.5px rgb(30, 32, 30), 0px 0px 2px 0px #ffffff inset;
+  box-shadow: 0px 0px 1px 0.5px rgb(30, 32, 30), 0px 0px 2px 0px #cccbcb inset;
 }
 
 .button-a {
@@ -416,19 +420,14 @@ todo make border around
   gap: 5px;
 }
 
-/* .select:active:not(:last-child) {
-    transform: translateY(0.2px);
-} */
-
 .start-button,
 .select-button {
   margin: auto;
   background-color: rgb(48, 45, 45);
-  border: 1px solid rgb(48, 45, 45);
   border-radius: 40%;
-  height: 4px;
+  height: 7px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
-    0.2px 0.2px 1px 0px #ffffff inset;
+    0px 0.5px 1.5px 0px #cccbcb inset;
 }
 
 .select-button:active,
