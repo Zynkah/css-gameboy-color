@@ -2,21 +2,20 @@
   position: relative;
   background-color: rgb(116, 220, 46);
   height: 560px;
-  width: 360px;
+  width: 340px;
   border-radius: 6px 6px 24px 24px;
   user-select: none;
-  /* todo look up clip-path // bezier curve between points */
-  /* clip-path: polygon(
-    100% 85%, 
-    83% 92%, 
-    60% 94%, 
-    42% 94%, 
-    24% 92%, 
-    11% 91%, 
-    0% 88%, 
-    0% 0%, 
-    100% 0%
-    ); */
+}
+
+.wrapper_bottom {
+  position: absolute;
+  bottom: -2.7%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(116, 220, 46);
+  height: 10%;
+  width: 95%;
+  border-radius: 40%;
 }
 
 .left-ridges {
@@ -69,6 +68,17 @@
   top: 16%;
 }
 
+/* POWER BUTTON */
+.power-button {
+  position: absolute;
+  right: -1.5%;
+  top: 22%;
+  z-index: -1;
+  background-color: rgb(48, 45, 45);
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
 .comm-icon {
   position: absolute;
   top: 1%;
@@ -80,21 +90,15 @@
   border-right: 6px solid transparent;
 
   border-bottom: 10px solid rgb(158, 249, 97);
-  /* @todo find out how to do a proper box shadow like effect around triangle */
+  filter: drop-shadow(0.5px 0.5px 1px rgb(78, 145, 33));
 }
-
-/* 
-todo make border around
-.comm-icon::after{
-    border: 1px solid rgb(78, 145, 33)
-} */
 
 .comm {
   position: absolute;
   top: 0.6%;
   left: 25%;
   color: rgb(158, 249, 97);
-  text-shadow: 1px 1px 1px rgb(78, 145, 33);
+  text-shadow: 0.5px 0.5px 1px rgb(78, 145, 33);
 
   font-size: 12px;
   font-family: comic sans ms;
@@ -107,9 +111,23 @@ todo make border around
   transform: translateX(-50%);
   background-color: black;
   height: 45%;
-  width: 315px;
-  border-radius: 6px;
+  width: 300px;
+  border-radius: 10px;
   z-index: 1;
+}
+
+.screen_bottom {
+  position: absolute;
+  bottom: -2.8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  /* background-color: red; */
+
+  height: 10%;
+  width: 98%;
+  border-radius: 40%;
+  z-index: 10;
 }
 
 .lcd {
@@ -249,6 +267,17 @@ todo make border around
   box-shadow: 0px 1px 50px 0.5px rgb(70, 81, 67, 0.2);
 }
 
+.inner-ridge_bottom {
+  position: absolute;
+  bottom: -2.3%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(116, 220, 46);
+  height: 10%;
+  width: 95%;
+  border-radius: 40%;
+}
+
 .nintendo-logo {
   position: absolute;
   top: 53%;
@@ -259,15 +288,20 @@ todo make border around
   border: 2px solid rgb(95, 178, 40);
   border-radius: 24px;
   padding-inline: 8px;
-  padding-block: 0px;
+  padding-block: 0.5px;
   font-weight: 700;
-  letter-spacing: 2.5px;
-  /* box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.2),
-    0px 0px 5px 1px rgba(255, 255, 255, 0.2) inset;
+  letter-spacing: 2.8px;
+  box-shadow: 0px 0px 5px 1px rgb(158, 249, 97),
+    0px 0px 1px 0.5px rgb(158, 249, 97) inset;
+  -webkit-text-stroke: 1px rgb(88, 169, 34);
+}
+
+.zyntendo {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2),
     0px 0px 1px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 1px rgb(95, 178, 40);
-  font-weight: 100; */
+  -webkit-text-stroke: 1px rgb(88, 169, 34);
+  font-weight: 100;
+  font-size: 14px;
 }
 
 .trademark {
@@ -275,10 +309,10 @@ todo make border around
   left: 88%;
   top: 10%;
   font-size: 6px;
-  text-shadow: none;
-  -webkit-text-stroke: none;
+  -webkit-text-stroke: 0px rgb(88, 169, 34);
 }
 
+/* make the d-pad buttons have push animations */
 .d-pad {
   display: inline-flex;
   position: absolute;
@@ -286,16 +320,16 @@ todo make border around
   left: 8%;
 }
 
-/* todo fix shadow overlay thingy */
 .d-pad-shadow {
-  box-shadow: 0px 1px 1px 1px rgb(30, 32, 30);
+  box-shadow: 0px 0px 1px 2px rgb(30, 32, 30);
 }
 
+/* todo  fix highlight for horizontal bar*/
 .d-pad-highlight {
-  box-shadow: 0px 0px 1px 0cqmax #cccbcb inset;
+  box-shadow: 0.5px 0.5px 2px 0px #a09393 inset;
 }
 
-.d-pad-vertical{
+.d-pad-vertical {
   transform: rotate(90deg);
 }
 
@@ -304,8 +338,27 @@ todo make border around
   width: 80px;
   height: 25px;
   background-color: rgb(48, 45, 45);
-  border-radius: 5%;
+  border-radius: 4px;
 }
+
+
+/* get this right */
+/* .d-pad:has(.d-pad-vertical) .d-pad-shadow {
+  box-shadow: 1px -1px 2px 0px #a09393 inset;
+} */
+
+/* .d-pad:has(.up-arrow:active) .d-pad-shadow {
+  box-shadow: 1px 0px 1px 2px rgb(30, 32, 30);
+}
+.d-pad:has(.down-arrow:active) .d-pad-shadow {
+  box-shadow: -1px 0px 1px 2px rgb(30, 32, 30);
+}
+.d-pad:has(.left-arrow:active) .d-pad-shadow {
+  box-shadow: 0px 1px 1px 2px rgb(30, 32, 30);
+}
+.d-pad:has(.right-arrow:active) .d-pad-shadow {
+  box-shadow: 0px -1px 1px 2px rgb(30, 32, 30);
+} */
 
 .arrow-common {
   position: absolute;
@@ -313,6 +366,7 @@ todo make border around
   border-right: 6px solid transparent;
   border-bottom: 10px solid #00000050;
   z-index: 1;
+  cursor: pointer;
 }
 
 .up-arrow {
@@ -351,7 +405,6 @@ todo make border around
     -0.5px -0.5px 1px 0px #a09393 inset;
 }
 
-
 .button {
   display: flex;
   font-family: comic sans ms;
@@ -359,13 +412,12 @@ todo make border around
   justify-content: flex-start;
   position: absolute;
   border: 1px solid tranparent;
-  /* border-style: outset; */
   border-radius: 50%;
   background-color: rgb(48, 45, 45);
   width: 37px;
   height: 37px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
-    0.5px 0.5px 2px 0px #cccbcb inset;
+    0.5px 0.5px 2px 0px #a09393 inset;
   cursor: pointer;
 }
 
@@ -384,32 +436,32 @@ todo make border around
 
 .button:active {
   transform: translateY(2px);
-  box-shadow: 0px 0px 1px 0.5px rgb(30, 32, 30), 0px 0px 2px 0px #cccbcb inset;
+  box-shadow: 0px 0px 1px 0.5px rgb(30, 32, 30), 0px 0px 2px 0px #a09393 inset;
 }
 
 .button-a {
   top: 60%;
-  right: 12%;
+  right: 8%;
 }
 
 .button-b {
   top: 63%;
-  right: 28%;
+  right: 24%;
 }
 
 .select-start-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 8px;
   position: absolute;
-  bottom: 11%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   justify-content: space-evenly;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   color: rgb(158, 249, 97);
-  text-shadow: 1px 1px 1px rgb(78, 145, 33);
+  text-shadow: 0.5px 0.5px 1px rgb(78, 145, 33);
   font-family: comic sans ms;
 }
 
@@ -425,14 +477,15 @@ todo make border around
   margin: auto;
   background-color: rgb(48, 45, 45);
   border-radius: 40%;
-  height: 7px;
+  height: 9px;
   box-shadow: 0px 1px 1px 0.5px rgb(30, 32, 30),
-    0px 0.5px 1.5px 0px #cccbcb inset;
+    0px 0.5px 1.5px 0px #a09393 inset;
+  cursor: pointer;
 }
 
 .select-button:active,
 .start-button:active {
-  transform: translateY(0.2px);
+  transform: translateY(0.5px);
 }
 
 .button-border {
@@ -444,8 +497,8 @@ todo make border around
 
 .speaker {
   position: absolute;
-  bottom: 2%;
-  right: 4%;
+  bottom: 3%;
+  right: 6%;
   width: 85px;
   aspect-ratio: 1 / 1;
 }
@@ -456,9 +509,8 @@ todo make border around
   padding-block: 2px;
   align-items: center;
   justify-content: center;
-  /* mess with values for skew */
   transform-origin: 100% 50%;
-  transform: skewY(-2deg);
+  transform: skewY(-10deg);
 }
 
 .dot {
