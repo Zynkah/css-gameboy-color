@@ -5,6 +5,7 @@
   width: 340px;
   border-radius: 6px 6px 24px 24px;
   user-select: none;
+  font-family: comic sans ms;
 }
 
 .wrapper_bottom {
@@ -94,6 +95,29 @@
   background-color: red;
 }
 
+.power-button-checkbox:checked ~ .screen .load-logo {
+  display: flex;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.power-button-checkbox:checked ~ .screen .load-gameboy-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition-delay: 0.5s;
+  font-size: 30px;
+  text-wrap: nowrap;
+  font-weight: 800;
+  opacity: 1;
+}
+
 .comm-icon {
   position: absolute;
   top: 1%;
@@ -116,7 +140,6 @@
   text-shadow: 0.5px 0.5px 1px rgb(78, 145, 33);
 
   font-size: 12px;
-  font-family: comic sans ms;
 }
 
 .screen {
@@ -154,6 +177,14 @@
   height: 70%;
   width: 68%;
   border-radius: 4px;
+}
+
+.load-gameboy-text {
+  opacity: 0;
+}
+
+.load-logo {
+  opacity: 0;
 }
 
 .power-icon {
@@ -237,7 +268,6 @@
   top: 30%;
   left: 2%;
   color: cadetblue;
-  font-family: comic sans ms;
   font-size: 8px;
 }
 
@@ -247,7 +277,6 @@
   left: 50%;
   transform: translateX(-50%);
   color: cadetblue;
-  font-family: comic sans ms;
   font-weight: bold;
   font-size: 20px;
   text-wrap: nowrap;
@@ -308,7 +337,6 @@
   left: 50%;
   transform: translateX(-50%);
   color: rgb(95, 178, 40);
-  font-family: comic sans ms;
   border: 2px solid rgb(95, 178, 40);
   border-radius: 24px;
   padding-inline: 8px;
@@ -430,7 +458,6 @@
 
 .button {
   display: flex;
-  font-family: comic sans ms;
   align-items: flex-end;
   justify-content: flex-start;
   position: absolute;
@@ -485,7 +512,6 @@
   text-transform: uppercase;
   color: rgb(158, 250, 73);
   text-shadow: 0.5px 0.5px 1px rgb(78, 145, 33);
-  font-family: comic sans ms;
 }
 
 .select,
