@@ -1,6 +1,6 @@
 .wrapper {
   position: relative;
-  background-color: rgb(116, 220, 46);
+  background-color: rgba(142, 229, 63, 1);
   height: 560px;
   width: 340px;
   border-radius: 6px 6px 24px 24px;
@@ -12,7 +12,7 @@
   bottom: -2.7%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(116, 220, 46);
+  background-color: rgba(142, 229, 63);
   height: 10%;
   width: 95%;
   border-radius: 40%;
@@ -26,7 +26,7 @@
   position: absolute;
   width: 8px;
   aspect-ratio: 1 / 1;
-  background-color: rgb(116, 220, 46);
+  background-color: rgba(142, 229, 63, 1);
   border-radius: 50%;
 }
 
@@ -71,12 +71,27 @@
 /* POWER BUTTON */
 .power-button {
   position: absolute;
-  right: -1.5%;
+  right: -2%;
   top: 22%;
-  z-index: -1;
   background-color: rgb(48, 45, 45);
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 0px 2px 2px 0px;
+  height: 20px;
+  width: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.power-button-checkbox {
+  display: none;
+}
+
+.power-button-checkbox:checked + .power-button {
+  top: 21%;
+}
+
+.power-button-checkbox:checked ~ .screen .power-led {
+  background-color: red;
 }
 
 .comm-icon {
@@ -89,7 +104,7 @@
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
 
-  border-bottom: 10px solid rgb(158, 249, 97);
+  border-bottom: 10px solid rgb(158, 250, 73);
   filter: drop-shadow(0.5px 0.5px 1px rgb(78, 145, 33));
 }
 
@@ -97,7 +112,7 @@
   position: absolute;
   top: 0.6%;
   left: 25%;
-  color: rgb(158, 249, 97);
+  color: rgb(158, 250, 73);
   text-shadow: 0.5px 0.5px 1px rgb(78, 145, 33);
 
   font-size: 12px;
@@ -118,14 +133,14 @@
 
 .screen_bottom {
   position: absolute;
-  bottom: -2.8%;
+  bottom: -2.4%;
   left: 50%;
   transform: translateX(-50%);
   background-color: black;
   /* background-color: red; */
 
-  height: 10%;
-  width: 98%;
+  height: 8%;
+  width: 97%;
   border-radius: 40%;
   z-index: 10;
 }
@@ -236,21 +251,30 @@
   font-weight: bold;
   font-size: 20px;
   text-wrap: nowrap;
+  letter-spacing: -2px;
 }
 
 .logo span:nth-child(1) {
+  display: inline-block;
+  transform: skewX(-5deg);
+  margin-right: 10px;
+}
+
+.logo span:nth-child(2) {
   color: red;
 }
-.logo span:nth-child(2) {
+.logo span:nth-child(3) {
   color: rgb(141, 60, 199);
 }
-.logo span:nth-child(3) {
-  color: rgb(116, 220, 46);
-}
 .logo span:nth-child(4) {
-  color: yellow;
+  display: inline-block;
+  color: rgba(142, 229, 63, 1);
+  transform: rotate(-5deg);
 }
 .logo span:nth-child(5) {
+  color: yellow;
+}
+.logo span:nth-child(6) {
   color: rgb(9, 158, 158);
 }
 
@@ -272,7 +296,7 @@
   bottom: -2.3%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgb(116, 220, 46);
+  background-color: rgb(142, 229, 63);
   height: 10%;
   width: 95%;
   border-radius: 40%;
@@ -291,8 +315,8 @@
   padding-block: 0.5px;
   font-weight: 700;
   letter-spacing: 2.8px;
-  box-shadow: 0px 0px 5px 1px rgb(158, 249, 97),
-    0px 0px 1px 0.5px rgb(158, 249, 97) inset;
+  box-shadow: 0px 0px 5px 1px rgb(158, 250, 73),
+    0px 0px 1px 0.5px rgb(158, 250, 73) inset;
   -webkit-text-stroke: 1px rgb(88, 169, 34);
 }
 
@@ -340,7 +364,6 @@
   background-color: rgb(48, 45, 45);
   border-radius: 4px;
 }
-
 
 /* get this right */
 /* .d-pad:has(.d-pad-vertical) .d-pad-shadow {
@@ -460,7 +483,7 @@
   justify-content: space-evenly;
   font-size: 12px;
   text-transform: uppercase;
-  color: rgb(158, 249, 97);
+  color: rgb(158, 250, 73);
   text-shadow: 0.5px 0.5px 1px rgb(78, 145, 33);
   font-family: comic sans ms;
 }
