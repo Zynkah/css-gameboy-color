@@ -101,21 +101,123 @@
   bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 1;
-  transition-delay: 0.5s;
+  animation: load-text 5s ease;
 }
 
 .power-button-checkbox:checked ~ .screen .load-gameboy-text {
   position: absolute;
   top: 30%;
   left: 50%;
+  transform: translateX(-50%) skewX(-5deg);
+  transform-origin: center left;
+  filter: brightness(70%);
+  animation: load-text 5s ease;
+}
+
+/* todo add animation delay */
+@keyframes load-text {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* todo: make animation delay work properly */
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(1) {
+  animation: load-gameboy-animation 1s ease-in forwards;
+}
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(2) {
+  animation: load-gameboy-animation 1.2s ease-in forwards;
+}
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(3) {
+  animation: load-gameboy-animation 1.4s ease-in forwards;
+}
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(4) {
+  animation: load-gameboy-animation 1.6s ease-in forwards;
+}
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(6) {
+  animation: load-gameboy-animation 1.8s ease-in forwards;
+}
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(7) {
+  animation: load-gameboy-animation 2s ease-in forwards;
+}
+.power-button-checkbox:checked ~ .screen .load-gameboy-text :nth-child(8) {
+  animation: load-gameboy-animation 2.2s ease-in forwards;
+}
+
+@keyframes load-gameboy-animation {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+    color: rgb(20, 20, 89);
+  }
+  16% {
+    color: blue;
+  }
+  33% {
+    color: green;
+  }
+  50% {
+    transform: scaleX(0.5);
+    opacity: 0.5;
+    color: rgb(238, 95, 119);
+  }
+  66% {
+    color: rgb(240, 137, 40);
+  }
+  83% {
+    color: yellow;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.load-trademark-info {
+  opacity: 0;
+}
+
+.power-button-checkbox:checked ~ .screen .load-trademark-info {
+  position: absolute;
+  top: 30%;
+  left: 50%;
   transform: translateX(-50%);
-  opacity: 1;
-  transition-delay: 0.5s;
-  font-size: 30px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  animation: load-text 3s ease;
+  animation-delay: 6s;
+}
+
+@keyframes load-trademark-animation {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bold-trademark-info-line {
   text-wrap: nowrap;
-  font-weight: 800;
-  opacity: 1;
+}
+
+.bold-trademark-info-line span:nth-child(2) {
+  font-weight: 700;
+}
+
+.bottom-trademark-info-line {
+  display: flex;
+  gap: 3px;
 }
 
 .comm-icon {
@@ -180,11 +282,20 @@
 }
 
 .load-gameboy-text {
+  display: inline-block;
   opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -6px;
+  font-size: 30px;
+  text-wrap: nowrap;
+  font-weight: 800;
+  color: midnightblue;
 }
 
 .load-logo {
   opacity: 0;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .power-icon {
@@ -392,24 +503,6 @@
   background-color: rgb(48, 45, 45);
   border-radius: 4px;
 }
-
-/* get this right */
-/* .d-pad:has(.d-pad-vertical) .d-pad-shadow {
-  box-shadow: 1px -1px 2px 0px #a09393 inset;
-} */
-
-/* .d-pad:has(.up-arrow:active) .d-pad-shadow {
-  box-shadow: 1px 0px 1px 2px rgb(30, 32, 30);
-}
-.d-pad:has(.down-arrow:active) .d-pad-shadow {
-  box-shadow: -1px 0px 1px 2px rgb(30, 32, 30);
-}
-.d-pad:has(.left-arrow:active) .d-pad-shadow {
-  box-shadow: 0px 1px 1px 2px rgb(30, 32, 30);
-}
-.d-pad:has(.right-arrow:active) .d-pad-shadow {
-  box-shadow: 0px -1px 1px 2px rgb(30, 32, 30);
-} */
 
 .arrow-common {
   position: absolute;
