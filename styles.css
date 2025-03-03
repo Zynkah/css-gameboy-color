@@ -1,3 +1,7 @@
+/* body {
+  background-color: rgb(117, 115, 113);
+} */
+
 .wrapper {
   position: relative;
   background-color: rgba(142, 229, 63, 1);
@@ -114,11 +118,8 @@
   animation: load-text 5s ease;
 }
 
-/* todo add animation delay */
 @keyframes load-text {
-  0% {
-    opacity: 1;
-  }
+  0%,
   90% {
     opacity: 1;
   }
@@ -208,8 +209,10 @@
 }
 
 .game-loading-screen {
-  opacity: 1;
+  opacity: 0;
+}
 
+.power-button-checkbox:checked ~ .screen .game-loading-screen {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -221,11 +224,28 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  animation: load-text 3s ease;
+  animation-delay: 10s;
 }
+
+/* look into css functions */
+/* .start-button-checkbox:checked ~ .screen .game-loading-screen {
+  animation: close-screen-animation 1s ease;
+} */
+/* 
+@keyframes close-screen-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
 
 .game-loading-screen span:first-child {
   font-size: 24px;
   animation: slide-in-right 2s forwards steps(30);
+  animation-delay: 10s;
 }
 
 @keyframes slide-in-right {
@@ -244,6 +264,7 @@
 
 .bottom-game-title {
   animation: slide-in-left 2.2s forwards steps(30);
+  animation-delay: 10s;
 }
 @keyframes slide-in-left {
   0% {
@@ -259,11 +280,10 @@
   }
 }
 
-.game-loading-screen span:last-child {
+.start-game-title {
   font-size: 12px;
   font-weight: 400;
   animation: pulsing 2s infinite;
-  animation-delay: 2s;
 }
 
 @keyframes pulsing {
@@ -278,20 +298,6 @@
   50% {
     opacity: 1;
   }
-}
-
-.power-button-checkbox:checked ~ .screen .game-loading-screen {
-   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 18px;
-  font-family: "Papyrus";
-  font-weight: bold;
-  word-spacing: 4px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
 }
 
 .bold-trademark-info-line {
@@ -699,6 +705,10 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.start-button-checkbox {
+  display: none;
 }
 
 .start-button,
