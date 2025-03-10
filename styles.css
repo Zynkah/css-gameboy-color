@@ -220,8 +220,17 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  animation: load-text 3s ease;
+  animation: fade-in 3s forwards;
   animation-delay: 10s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .top-game-title {
@@ -719,6 +728,18 @@
 
 .start-button-checkbox {
   display: none;
+}
+
+
+/* todo look closer at etsio ex. fix this */
+.start-button-checkbox:has(#start-button-selector:checked) ~ .screen .game-loading-screen {
+  transition: opacity 1s 1s;
+  opacity: 1;
+}
+
+.start-button-checkbox:not(#start-button-selector:checked) ~ .screen .game-loading-screen {
+  transition: opacity 1s 1s;
+  opacity: 0;
 }
 
 .start-button,
