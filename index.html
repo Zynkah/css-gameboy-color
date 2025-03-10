@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <header>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gameboy Color</title>
     <link rel="stylesheet" href="styles.css" />
-  </header>
+  </head>
   <body>
-    <h1>Gameboy Color</h1>
-    <div class="wrapper">
+    <header>
+      <h1>Gameboy Color</h1>
+    </header>
+
+    <main class="wrapper">
       <div class="wrapper_bottom"></div>
+
       <!-- Side Ridges -->
       <div class="left-ridges">
         <span class="ridge-common"></span>
@@ -25,7 +29,6 @@
       </div>
 
       <!-- Power Button -->
-
       <input
         type="checkbox"
         class="power-button-checkbox"
@@ -36,7 +39,8 @@
       <!-- Comm Section -->
       <div class="comm-icon"></div>
       <div class="comm">COMM.</div>
-      <div class="screen">
+
+      <section class="screen">
         <div class="screen_bottom"></div>
         <div class="lcd">
           <div class="load-gameboy-text">
@@ -50,6 +54,7 @@
             <span>Y</span>
           </div>
 
+          <!-- Screen Animation section -->
           <div class="load-logo">
             <span>Zyntendo</span>
             <span>&reg;</span>
@@ -71,8 +76,9 @@
             <span class="bottom-game-title">EDGE</span>
             <span class="start-game-title">press start</span>
           </div>
-          
         </div>
+
+        <!-- Power Symbol -->
         <div class="power-icon">
           <span class="power-led"></span>
           <span></span>
@@ -84,8 +90,6 @@
           <span></span>
           <span></span>
         </div>
-
-        <!-- Power Symbol -->
         <div class="power">POWER</div>
 
         <!-- Gameboy Color Logo -->
@@ -93,9 +97,8 @@
           <span>GAME BOY </span><span>C</span><span>O</span
           ><span class="l">L</span><span>O</span><span>R</span>
         </div>
-      </div>
+      </section>
 
-      <!-- @todo look up neumorphic shadow -->
       <div class="inner-ridge">
         <div class="inner-ridge_bottom"></div>
       </div>
@@ -106,9 +109,8 @@
         ><span class="trademark">&reg;</span>
       </div>
 
-      <!-- maybe grid the buttons -->
       <!-- D-Pad buttons -->
-      <div class="d-pad">
+      <section class="d-pad">
         <span class="d-pad-common d-pad-shadow">
           <span class="d-pad-common"></span>
           <span class="left-arrow arrow-common"></span>
@@ -122,14 +124,14 @@
           <span class="up-arrow arrow-common"></span
           ><span class="down-arrow arrow-common"></span>
         </span>
-      </div>
+      </section>
 
       <!-- A & B buttons -->
       <div class="button button-a"><span>A</span></div>
       <div class="button button-b"><span>B</span></div>
 
       <!-- Select & Start buttons -->
-      <div class="select-start-wrapper">
+      <section class="select-start-wrapper">
         <div class="select">
           <span class="button-border"> <div class="select-button"></div></span>
           <span>select</span>
@@ -137,19 +139,19 @@
 
         <!-- Start button Input -->
 
-        <input type="checkbox"
-        class="start-button-checkbox"
-        id="start-button-selector" />
+        <input
+          type="checkbox"
+          class="start-button-checkbox"
+          id="start-button-selector"
+        />
         <label for="start-button-selector" class="start">
           <span class="button-border"><div class="start-button"></div></span>
           <span>start</span>
         </label>
-
-
-      </div>
+      </section>
 
       <!-- Speaker Dots -->
-      <div class="speaker">
+      <section class="speaker">
         <div class="dot-wrapper">
           <span class="dot dot-open"></span>
           <span class="dot dot-closed"></span>
@@ -233,7 +235,7 @@
           <span class="dot dot-closed"></span>
           <span class="dot dot-open"></span>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   </body>
 </html>
