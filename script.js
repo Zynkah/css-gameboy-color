@@ -8,6 +8,21 @@ function draw() {
     ctx.strokeRect(79, 100, 45, 70); //lower
     ctx.strokeRect(75, 89, 52, 10); //lower cap
 
+    ctx.beginPath();
+    ctx.moveTo(116, 140);
+    ctx.lineTo(102, 130);
+    ctx.lineTo(88, 140);
+    ctx.lineTo(88, 170);
+    ctx.lineTo(116, 170);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(102, 130);
+    ctx.lineTo(102, 170);
+    ctx.stroke();
+
+
     ctx.strokeRect(92, 28, 20, 60); //upper
     ctx.beginPath();
     ctx.moveTo(88, 14);
