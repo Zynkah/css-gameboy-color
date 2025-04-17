@@ -2,124 +2,129 @@ function draw() {
   const canvas = document.getElementById("canvas");
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
-
-    // x,y, width, hieght
-    // center tower
-    ctx.strokeRect(79, 100, 45, 70); //lower
-    ctx.strokeRect(75, 89, 52, 10); //lower cap
-
-    ctx.beginPath();
-    ctx.moveTo(116, 140);
-    ctx.lineTo(102, 130);
-    ctx.lineTo(88, 140);
-    ctx.lineTo(88, 170);
-    ctx.lineTo(116, 170);
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(102, 130);
-    ctx.lineTo(102, 170);
-    ctx.stroke();
-
-
-    ctx.strokeRect(92, 28, 20, 60); //upper
-    ctx.beginPath();
-    ctx.moveTo(88, 14);
-    ctx.lineTo(93, 14);
-    ctx.lineTo(93, 18);
-    ctx.lineTo(97, 18);
-    ctx.lineTo(97, 14);
-    ctx.lineTo(99, 14);
-    ctx.lineTo(99, 14);
-    ctx.lineTo(104, 14);
-    ctx.lineTo(105, 14);
-    ctx.lineTo(105, 18);
-    ctx.lineTo(110, 18);
-    ctx.lineTo(110, 14);
-    ctx.lineTo(112, 14);
-    ctx.lineTo(112, 18);
-    ctx.lineTo(116, 18);
-    ctx.lineTo(116, 14);
-    ctx.lineTo(116, 27);
-    ctx.lineTo(88, 27);
-    ctx.closePath();
-    ctx.stroke();
-    // ctx.strokeRect(89, 13, 26, 14); //upper cap
-
-    // middle towers
-    ctx.strokeRect(37, 130, 40, 40); //left
-    ctx.strokeRect(37, 114, 40, 14); // left cap
-
-    ctx.strokeRect(126, 130, 40, 40); //right
-    ctx.strokeRect(126, 114, 40, 14); //right cap
-
-    // center left tower side
-    ctx.beginPath();
-    ctx.moveTo(69, 115);
-    ctx.lineTo(69, 60);
-    ctx.lineTo(93, 60);
-    // center right tower side
-    ctx.moveTo(135, 115);
-    ctx.lineTo(135, 60);
-    ctx.lineTo(113, 60);
-    ctx.stroke();
-
-    ctx.strokeRect(69, 45, 23, 14); // center left tower cap
-    ctx.strokeRect(113, 45, 23, 14); // center right tower cap
-
-    // center outer top towers
-    ctx.strokeRect(69, 29, 10, 15); // left
-    // left cap
-    ctx.beginPath();
-    ctx.moveTo(67, 22);
-    ctx.lineTo(70, 22);
-    ctx.lineTo(70, 25);
-    ctx.lineTo(74, 25);
-    ctx.lineTo(74, 22);
-    ctx.lineTo(78, 22);
-    ctx.lineTo(78, 25);
-    ctx.lineTo(80, 25);
-    ctx.lineTo(81, 22);
-    ctx.lineTo(81, 30);
-    ctx.lineTo(67, 30);
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.strokeRect(126, 29, 10, 15); // right
-    // ctx.strokeRect(124, 22, 14, 5); // right cap
-    ctx.beginPath();
-    ctx.moveTo(124, 22);
-    ctx.lineTo(127, 22);
-    ctx.lineTo(127, 25);
-    ctx.lineTo(131, 25);
-    ctx.lineTo(131, 22);
-    ctx.lineTo(135, 22);
-    ctx.lineTo(135, 25);
-    ctx.lineTo(137, 25);
-    ctx.lineTo(138, 22);
-    ctx.lineTo(138, 30);
-    ctx.lineTo(124, 30);
-    ctx.closePath();
-    ctx.stroke();
-
-    // outer towers
-    ctx.strokeRect(10, 105, 25, 65); //lower left
-    ctx.strokeRect(7, 89, 32, 14); // lower left cap
-
-    ctx.strokeRect(40, 73, 20, 40); // upper left
-    ctx.strokeRect(37, 57, 26, 14); // upper left cap
-
-    ctx.strokeRect(168, 105, 25, 65); //lower right
-    ctx.strokeRect(165, 89, 32, 14); // lower right cap
-
-    ctx.strokeRect(145, 73, 20, 40); //upper right
-    ctx.strokeRect(142, 57, 26, 14); // upper right cap
+    drawCenterTower(ctx);
+    drawMiddleTowers(ctx);
+    drawOuterTowers(ctx);
   }
 }
+
+function drawCenterTower(ctx) {
+  // Lower section
+  ctx.strokeRect(79, 100, 45, 70);
+  ctx.strokeRect(75, 89, 52, 10);
+
+  // Door
+  ctx.beginPath();
+  ctx.moveTo(116, 140);
+  ctx.lineTo(102, 130);
+  ctx.lineTo(88, 140);
+  ctx.lineTo(88, 170);
+  ctx.lineTo(116, 170);
+  ctx.closePath();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(102, 130);
+  ctx.lineTo(102, 170);
+  ctx.stroke();
+
+  // Upper section
+  ctx.strokeRect(92, 28, 20, 60);
+  drawBattlements(ctx, 88, 14);
+}
+
+function drawMiddleTowers(ctx) {
+  // Left tower
+  ctx.strokeRect(37, 130, 40, 40);
+  ctx.strokeRect(37, 114, 40, 14);
+
+  // Right tower
+  ctx.strokeRect(126, 130, 40, 40);
+  ctx.strokeRect(126, 114, 40, 14);
+
+  // Connecting walls
+  drawConnectingWall(ctx, 69, 115, 69, 60, 93, 60);
+  drawConnectingWall(ctx, 135, 115, 135, 60, 113, 60);
+
+  // Tower caps
+  ctx.strokeRect(69, 45, 23, 14);
+  ctx.strokeRect(113, 45, 23, 14);
+
+  // Outer top towers
+  drawSmallTower(ctx, 69, 29, 67, 22);
+  drawSmallTower(ctx, 126, 29, 124, 22);
+}
+
+function drawOuterTowers(ctx) {
+  // Left side
+  ctx.strokeRect(10, 105, 25, 65);
+  ctx.strokeRect(7, 89, 32, 14);
+
+  // Middle left side
+  ctx.strokeRect(40, 73, 20, 40);
+  drawBattlements(ctx, 36, 59);
+
+  // Right side
+  ctx.strokeRect(168, 105, 25, 65);
+  ctx.strokeRect(165, 89, 32, 14);
+
+  // Middle right side
+  ctx.strokeRect(145, 73, 20, 40);
+  drawBattlements(ctx, 141, 59);
+}
+
+function drawConnectingWall(ctx, startX, startY, midX, midY, endX, endY) {
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+  ctx.lineTo(midX, midY);
+  ctx.lineTo(endX, endY);
+  ctx.stroke();
+}
+
+
+function drawBattlements(ctx, x, y) {
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 5, y);
+  ctx.lineTo(x + 5, y + 4);
+  ctx.lineTo(x + 9, y + 4);
+  ctx.lineTo(x + 9, y);
+  ctx.lineTo(x + 11, y);
+  ctx.lineTo(x + 16, y);
+  ctx.lineTo(x + 17, y);
+  ctx.lineTo(x + 17, y + 4);
+  ctx.lineTo(x + 22, y + 4);
+  ctx.lineTo(x + 22, y);
+  ctx.lineTo(x + 24, y);
+  ctx.lineTo(x + 24, y + 4);
+  ctx.lineTo(x + 28, y + 4);
+  ctx.lineTo(x + 28, y);
+  ctx.lineTo(x + 28, y + 13);
+  ctx.lineTo(x, y + 13);
+  ctx.closePath();
+  ctx.stroke();
+}
+
+function drawSmallTower(ctx, towerX, towerY, battlementX, battlementY) {
+  ctx.strokeRect(towerX, towerY, 10, 15);
+  drawSmallBattlements(ctx, battlementX, battlementY);
+}
+
+function drawSmallBattlements(ctx, x, y) {
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + 3, y);
+  ctx.lineTo(x + 3, y + 3);
+  ctx.lineTo(x + 7, y + 3);
+  ctx.lineTo(x + 7, y);
+  ctx.lineTo(x + 11, y);
+  ctx.lineTo(x + 11, y + 3);
+  ctx.lineTo(x + 13, y + 3);
+  ctx.lineTo(x + 14, y);
+  ctx.lineTo(x + 14, y + 8);
+  ctx.lineTo(x, y + 8);
+  ctx.closePath();
+  ctx.stroke();
+}
+
 window.addEventListener("load", draw);
-
-// todo
-// function drawPillar() {
-
-// }
