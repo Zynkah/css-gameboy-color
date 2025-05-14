@@ -58,7 +58,7 @@ function drawMiddleTowers(ctx) {
 function drawOuterTowers(ctx) {
   // Left side
   ctx.strokeRect(10, 105, 25, 65);
-  ctx.strokeRect(7, 89, 32, 14);
+  drawLargeBattlements(ctx, 7, 91);
 
   // Middle left side
   ctx.strokeRect(40, 73, 20, 40);
@@ -66,7 +66,7 @@ function drawOuterTowers(ctx) {
 
   // Right side
   ctx.strokeRect(168, 105, 25, 65);
-  ctx.strokeRect(165, 89, 32, 14);
+  drawLargeBattlements(ctx, 165, 91);
 
   // Middle right side
   ctx.strokeRect(145, 73, 20, 40);
@@ -81,6 +81,31 @@ function drawConnectingWall(ctx, startX, startY, midX, midY, endX, endY) {
   ctx.stroke();
 }
 
+
+function drawLargeBattlements(ctx, x, y) {
+  ctx.beginPath();
+  ctx.moveTo(x, y)
+  ctx.lineTo(x + 5, y);
+  ctx.lineTo(x + 5, y + 4);
+  ctx.lineTo(x + 9, y + 4);
+  ctx.lineTo(x + 9, y);
+  ctx.lineTo(x + 11, y);
+  ctx.lineTo(x + 16, y);
+  ctx.lineTo(x + 17, y);
+  ctx.lineTo(x + 17, y + 4);
+  ctx.lineTo(x + 22, y + 4);
+  ctx.lineTo(x + 22, y);
+  ctx.lineTo(x + 24, y);
+  ctx.lineTo(x + 24, y + 4);
+  ctx.lineTo(x + 28, y + 4);
+  ctx.lineTo(x + 30, y);
+  ctx.lineTo(x + 30, y);
+  ctx.lineTo(x + 32, y);
+  ctx.lineTo(x + 32, y + 13);
+  ctx.lineTo(x, y + 13);
+  ctx.closePath()
+  ctx.stroke()
+}
 
 function drawBattlements(ctx, x, y) {
   ctx.beginPath();
